@@ -4,6 +4,7 @@ from equipmentTable import equipmentTable
 from luckScoreTable import luckScoreTable
 import csv
 
+"""A Character class that rolls a new character automatically."""
 
 class Character:
     inventory = []
