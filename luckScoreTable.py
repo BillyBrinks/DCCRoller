@@ -1,5 +1,7 @@
 from Dice import Dice
 
+"""A dictionary representing Table 1-2 from the official DCC rulebook.
+Keys are luck scores, values are Birth Augrs and Lucky Rolls."""
 
 class luckScoreTable:
     table = {1:'Harsh Winter: All attack rolls',

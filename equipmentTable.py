@@ -1,3 +1,9 @@
+
+"""A table representing dice rolls as keys with
+their associated equipment pieces as values. Also
+an additional table with the items as keys and
+the cost of those items as values."""
+
 class equipmentTable:
     rollTable = {1: 'Backpack',
                  2: 'Candle',
