@@ -1,11 +1,10 @@
 class abilityModifier:
 
-    '''A table representing Table 1-1 from the official DCC rulebook.
+    """A table representing Table 1-1 from the official DCC rulebook.
     Ability scores are keys, and their associated values are lists
     containing, in order: Modifier, Max Wizard Spells Known (min 1), and Max Spell Level
     Includes method getModifiers, which takes in an ability score and returns
-    its associated list of modifiers.'''
-    #test
+    its associated list of modifiers."""
 
     table = {3:[-3, 'No spellcasting possible', 'No spellcasting possible'],
              4:[-2, -2, 1],
