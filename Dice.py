@@ -1,5 +1,8 @@
 import random
 
+"""A simple Dice class. Allows us to create any number of dice
+with any number of sides, and roll them."""
+
 class Dice:
 
     def __init__(self, numDice, numSides):
