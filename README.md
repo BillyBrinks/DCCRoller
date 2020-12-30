@@ -1,6 +1,7 @@
 # DCCRoller
 
 This project aims to create a feature-complete DCC Character generator. At present, it has the following functionalities:
+
 1: Rolls for HP (taking into account the instance's Stamina modifier) on its own
 2: Sets XP to 0 to start
 3: Rolls for copper pieces
