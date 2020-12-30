@@ -22,28 +22,14 @@ class Character:
         self.BALR = self.getBirthAugrandLuckyRoll()
         self.occupation = self.getOccupation()
         self.inventory.append(self.getTrainedWeapon())
-
-        if self.inventory[len(self.inventory) - 1] == 'Sling':
-            roll = d6.roll()
-            self.inventory.append(f'{roll} Sling Stones')
-        if self.inventory[len(self.inventory) - 1] == 'Dart':
-            roll = d6.roll()
-            self.inventory.append(f'{roll} Darts')
-
+        self.checkSlingDart()
         self.inventory.append(self.getTradeGoods())
+        self.checkPushCart()
+        self.checkIfFarmer()
+        self.AC = 10 + int(self.modifiers.get('Agility'))
 
-        if self.inventory[len(self.inventory) - 1] == 'Pushcart':
-            cartContents = {
-                1: 'Tomaters',
-                2: 'A Whole lotta Nuffin',
-                3: 'Straw',
-                4: 'Yer Dead',
-                5: 'Dirt',
-                6: 'Rocks'
-            }
-            roll = d6.roll()
-            self.inventory[len(self.inventory) - 1] = f'Pushcart full o\' {cartContents.get(roll)}'
-
+    def checkIfFarmer(self):
+        d8 = Dice(1, 8)
         if self.occupation == 'Farmer':
             farmerType = {
                 1: 'Potato',
@@ -57,6 +43,29 @@ class Character:
             }
             roll = d8.roll()
             self.occupation = f'{farmerType.get(roll)} Farmer'
+
+    def checkPushCart(self):
+        d6 = Dice(1, 6)
+        if self.inventory[len(self.inventory) - 1] == 'Pushcart':
+            cartContents = {
+                1: 'Tomaters',
+                2: 'A Whole lotta Nuffin',
+                3: 'Straw',
+                4: 'Yer Dead',
+                5: 'Dirt',
+                6: 'Rocks'
+            }
+            roll = d6.roll()
+            self.inventory[len(self.inventory) - 1] = f'Pushcart full o\' {cartContents.get(roll)}'
+
+    def checkSlingDart(self):
+        d6 = Dice(1, 6)
+        if self.inventory[len(self.inventory) - 1] == 'Sling':
+            roll = d6.roll()
+            self.inventory.append(f'{roll} Sling Stones')
+        if self.inventory[len(self.inventory) - 1] == 'Dart':
+            roll = d6.roll()
+            self.inventory.append(f'{roll} Darts')
 
     def rollAbilities(self):
         abilities = {'Strength': 0,
@@ -138,6 +147,7 @@ class Character:
 jon = Character()
 print(f'HP: {jon.HP}')
 print(f'XP: {jon.XP}')
+print(f'Armor Class: {jon.AC}')
 print(f'Coppahs: {jon.coppahs}')
 print(f'Birth Augr and Lucky Roll: {jon.BALR}')
 print(f'Occupation: {jon.occupation}')
