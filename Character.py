@@ -11,8 +11,6 @@ class Character:
     XP = 0
 
     def __init__(self):
-        d8 = Dice(1, 8)
-        d6 = Dice(1, 6)
 
         self.abilities = self.rollAbilities()
         self.modifiers = self.getModifiers()
