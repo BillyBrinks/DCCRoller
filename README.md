@@ -24,3 +24,5 @@ rolls for contents of pushcart in the 1/100 event a Wainright is rolled).
 10: If inventory contains either a sling or a dart-based weapon, rolls for amount of rocks or darts (ammo) and adds to inventory
 
 11: Rolls for instance's ability scores, and stores their associated dice modifiers. 
+
+The file in which these functions are called is Character.py.
