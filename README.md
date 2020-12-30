@@ -13,7 +13,7 @@ This project aims to create a feature-complete DCC Character generator. At prese
 5: Rolls for character occupation
 
 6: Follows all associated rules in rolling for occupation (rolls for what type of farmer if occupation = farmer, rolls for species of animal if farmer,
-rolls for contents of pushcart in the 1/100 event a pushcart is rolled).
+rolls for contents of pushcart in the 1/100 event a Wainright is rolled).
 
 7: Rolls for random equipment
 
