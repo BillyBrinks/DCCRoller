@@ -134,12 +134,23 @@ class Character:
                     return row[2].title().strip()
 
     def getTradeGoods(self):
+        if self.occupation == 'Farmer':
+            d6 = Dice(1, 6)
+            animals = {
+                1: 'Sheep',
+                2: 'Goat',
+                3: 'Cow',
+                4: 'Duck',
+                5: 'Goose',
+                6: 'Mule'
+            }
+            return animals.get(d6.roll())
+
         with open('occupations.csv', 'r') as occupations:
             reader = csv.reader(occupations)
             for row in reader:
                 if self.occupation == row[1].title().strip():
                     return row[3].title().strip()
-
 
 
 jon = Character()
