@@ -7,11 +7,10 @@ import csv
 """A Character class that rolls a new character automatically."""
 
 class Character:
-    inventory = []
-    XP = 0
 
     def __init__(self):
-
+        self.XP = 0
+        self.inventory = []
         self.abilities = self.rollAbilities()
         self.modifiers = self.getModifiers()
         self.HP = self.rollHP()
