@@ -25,4 +25,6 @@ rolls for contents of pushcart in the 1/100 event a Wainright is rolled).
 
 11: Rolls for instance's ability scores, and stores their associated dice modifiers. 
 
+12: Creates a blank window with a 'Generate' button that displays all info in the window.
+
 The file in which these functions are called is Character.py.
