@@ -151,18 +151,33 @@ class Character:
                 if self.occupation == row[1].title().strip():
                     return row[3].title().strip()
 
+    def getInfo(self):
+        abs_and_mods = self.getAbilitiesandModifiers()
+        return f'Name:\n' \
+               f'HP: {self.HP}\n' \
+               f'XP: {self.XP}\n' \
+               f'Armor Class: {self.AC}\n' \
+               f'Coppahs: {self.coppahs}\n' \
+               f'BALR:\n' \
+               f'{self.BALR}\n' \
+               f'Occupation: {self.occupation}\n' \
+               f'Inventory:\n' \
+               f'{self.inventory}\n' \
+               f'\n' \
+               f'Abilities and Modifiers:\n' \
+               f'\n' \
+               f'{abs_and_mods}'
 
-jon = Character()
-print(f'HP: {jon.HP}')
-print(f'XP: {jon.XP}')
-print(f'Armor Class: {jon.AC}')
-print(f'Coppahs: {jon.coppahs}')
-print(f'Birth Augr and Lucky Roll: {jon.BALR}')
-print(f'Occupation: {jon.occupation}')
-print(f'Inventory: {jon.inventory}')
-for ability in jon.abilities:
-    print(f'{ability}: {jon.abilities.get(ability)}')
-    print(f'Modifier: {jon.modifiers.get(ability)}\n')
+    def getAbilitiesandModifiers(self):
+        s = f''
+
+        for ability in self.abilities:
+            s += f'{ability}: {self.abilities.get(ability)}\n' \
+                 f'Modifier: {self.modifiers.get(ability)}\n' \
+                 f'\n'
+
+        return s
+
 
 
 
